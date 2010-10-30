@@ -1,5 +1,12 @@
-%h1= @page_title
-%p
-  = @user.name
-  %br
-  = @user.email
+%table.profile{:summary => 'Profile information'}
+  %tr
+    %td{:class => 'main'}
+      %h1
+        = gravatar_for @user
+        = @user.name
+    %td{:class => 'sidebar round'}
+      %strong Name
+      = @user.name
+      %br
+      %strong Link
+      = link_to 'User profile', @user
