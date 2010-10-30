@@ -1,3 +1,5 @@
 Microblog::Application.routes.draw do
-  match '/', :to => 'pages#home'
+  match '/signup',  :to => 'users#new'
+  
+  root :to => 'pages#home'
 end
