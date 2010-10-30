@@ -1,1 +1,21 @@
 %h1= @page_title
+= form_for @user do |f|
+  = render 'shared/error_messages'
+  %div.field
+    = f.label :name
+    %br
+    = f.text_field :name
+  %div.field
+    = f.label :email
+    %br
+    = f.text_field :email
+  %div.field
+    = f.label :password
+    %br
+    = f.password_field :password
+  %div.field
+    = f.label :password_confirmation
+    %br
+    = f.password_field :password_confirmation
+  %div.actions
+    = f.submit 'Sign up'
