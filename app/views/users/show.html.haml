@@ -4,9 +4,15 @@
       %h1
         = gravatar_for @user
         = @user.name
+      - unless @user.microposts.empty?
+        %table.microposts{:summary => 'User microposts'}
+          = render @microposts
     %td{:class => 'sidebar round'}
-      %strong Name
+      %strong Name:
       = @user.name
       %br
-      %strong Link
-      = link_to 'user profile', @user
+      %strong Link:
+      = link_to 'User profile', @user
+      %br
+      %strong Microposts:
+      = @user.microposts.count
