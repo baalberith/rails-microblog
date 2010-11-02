@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Wlecome to you're Microblog, #{@user.name}!"
-      redirect_to @user
+      redirect_to root_path
     else
       @page_title = 'Sign up'
       render :new
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated."
-      redirect_to @user
+      redirect_to edit_user_path(@user)
     else
       @page_title = 'Edit user'
       render :edit

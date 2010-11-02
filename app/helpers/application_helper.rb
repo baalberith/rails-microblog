@@ -9,6 +9,6 @@ module ApplicationHelper
   end
   
   def logo_tag
-    image_tag 'logo.png', :alt => @page_title, :class => 'round'
+    image_tag 'logo.jpg', :alt => @page_title, :class => 'round'
   end
 end
