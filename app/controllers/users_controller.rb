@@ -5,14 +5,14 @@ class UsersController < ApplicationController
   before_filter :signed_out_user, :only => [:new, :create]
   
   def index
-    @users = User.all
+    @users = User.all.paginate(:per_page => 2, :page => params[:page])
     
     @page_title = 'All users'
   end
   
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.all
+    @microposts = @user.microposts.all.paginate(:per_page => 2, :page => params[:page])
     
     @page_title = 'Profile'
   end
