@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   before_filter :signed_out_user, :only => [:new, :create]
   
   def index
-    @users = User.all.paginate(:per_page => 2, :page => params[:page])
+    @search = User.search(params[:search])
+    @users = @search.all.paginate(:per_page => 2, :page => params[:page])
     
     @page_title = 'All users'
   end

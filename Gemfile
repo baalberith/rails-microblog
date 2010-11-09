@@ -5,3 +5,13 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
+gem 'meta_search'
+
+group :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'webrat'
+end

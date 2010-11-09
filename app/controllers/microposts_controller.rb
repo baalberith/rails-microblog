@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
   
   def index
     @user = User.find(params[:user_id])
-    @microposts = @user.microposts.all
+    @microposts = @user.microposts.all.paginate(:per_page => 2, :page => params[:page])
     
     @page_title = 'Microposts'
   end
@@ -16,7 +16,7 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to root_path
     else
-      @feed_items = current_user.feed.all
+      @feed_items = current_user.feed.limit(2)
       render 'pages/home'
     end
   end

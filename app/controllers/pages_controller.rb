@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     
     if signed_in?
       @micropost = Micropost.new 
-      @feed_items = current_user.feed.all
+      @feed_items = current_user.feed.limit(2)
     end
   end
 end
