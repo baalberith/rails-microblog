@@ -257,6 +257,10 @@ div.user_info span.delete_link {
   font-size: 80%;
 }
 
+div.stats span.stat {
+  font-size: 80%;
+}
+
 form.new_micropost {
   margin-bottom: 2em;
 }
